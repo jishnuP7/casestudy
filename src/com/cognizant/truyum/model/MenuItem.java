@@ -3,16 +3,15 @@ package com.cognizant.truyum.model;
 import java.util.Date;
 
 public class MenuItem {
-	public MenuItem(long id, String name, float price, boolean active, String category, boolean freeDelivery,
-			Date dateOfLaunch) {
+	public MenuItem(long id, String name, float price, boolean active,Date dateOfLaunch, String category, boolean freeDelivery) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.active = active;
+		this.dateOfLaunch = dateOfLaunch;
 		this.category = category;
 		this.freeDelivery = freeDelivery;
-		this.dateOfLaunch = dateOfLaunch;
 	}
 
 	private long id;
@@ -88,9 +87,12 @@ public class MenuItem {
 		return result;
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return "MenuItem [id=" + id + "]";
+		return "MenuItem [id=" + id + ", name=" + name + ", price=" + price + ", active=" + active + ", dateOfLaunch=" + dateOfLaunch + ",category="
+				+ category + ", freeDelivery=" + freeDelivery +  "]";
 	}
 
 	@Override
