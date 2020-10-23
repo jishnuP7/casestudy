@@ -22,16 +22,9 @@ public class MenuItemDaoCollectionlmpl implements MenuItemDao{
 		}
 		menuItemList=lst;
 	}
-	
-	@Override
-	public List<MenuItem> getMenuItemListAdmin() {
-		return menuItemList;
-		
-	}
 	public static List<MenuItem> getMenuItemList() {
 		return menuItemList;
 	}
-
 	public static void setMenuItemList(List<MenuItem> menuItemList) {
 		MenuItemDaoCollectionlmpl.menuItemList = menuItemList;
 	}
@@ -40,13 +33,19 @@ public class MenuItemDaoCollectionlmpl implements MenuItemDao{
 		MenuItemDaoCollectionlmpl.menuItemList = menuItemList;
 		
 	}
+	@Override
+	public List<MenuItem> getMenuItemListAdmin() {
+		return menuItemList;
+		
+	}
 
 	@Override
 	public List<MenuItem> getMenuItemListCustomer(){
 		List<MenuItem> cList=new ArrayList<>();
-		Date today = new DateUtil().convertToDate("21/10/2020");
+		new DateUtil();
+		Date today= new Date(); 
 		for(MenuItem itm:menuItemList) {
-			if(itm.isActive() && (itm.getDateOfLaunch()).before(today) ) {
+			if(itm.isActive() && (itm.getDateOfLaunch().getTime()<=today.getTime())) {
 				cList.add(itm);
 				
 			}
