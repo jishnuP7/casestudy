@@ -36,7 +36,7 @@ public class MenuItemDaoCollectionlmpl implements MenuItemDao{
 	@Override
 	public List<MenuItem> getMenuItemListAdmin() {
 		return menuItemList;
-		
+	
 	}
 
 	@Override
